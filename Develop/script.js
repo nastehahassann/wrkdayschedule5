@@ -1,10 +1,12 @@
 
-$(".container-fluid").on("click", ".saveBtn", function () {
+$(".saveBtn").on("click",function () {
   var textArea = $(this).siblings(".description");
   var hourBlock = $(this).parent(".time-block").attr("id");
   var eventText = textArea.val().trim();
   localStorage.setItem(hourBlock, eventText);
 });
+
+
 
 function populateSavedEvents() {
   $(".time-block").each(function () {
@@ -15,8 +17,9 @@ function populateSavedEvents() {
 }
 
 
-displayCurrentDay();
-updateTimeBlocks();
+
+
+
 populateSavedEvents();
 
 
